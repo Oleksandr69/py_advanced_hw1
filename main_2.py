@@ -1,5 +1,6 @@
+# Напишіть декоратор, який буде заміряти час виконання для наданої функції.
 import time
-def print_decorator(func):
+def time_meter_decorator(func):
     def wrapper(*arqs, **kwarqs):
         start_time = time.time()
         result = func(*arqs, **kwarqs)
@@ -7,13 +8,13 @@ def print_decorator(func):
         return result
     return wrapper
 
-@print_decorator
+@time_meter_decorator
 def print_hello():
     print("hello")
 
 print(print_hello())
 
-@print_decorator
+@time_meter_decorator
 def sum(num_1: int, num_2: int):
     return num_1 + num_2
 
