@@ -11,11 +11,9 @@ def time_meter_decorator(func):
 @time_meter_decorator
 def print_hello():
     print("hello")
-
-print(print_hello())
+print_hello()
 
 @time_meter_decorator
 def sum(num_1: int, num_2: int):
     return num_1 + num_2
-
 print(sum(3, 5))
